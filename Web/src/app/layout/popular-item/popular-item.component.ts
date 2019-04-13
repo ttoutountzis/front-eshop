@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MainService } from '../main.service';
-import { Product, Photo } from '../model';
+import { Product, Photo, Post } from '../model';
 
 @Component({
   selector: 'app-popular-item',
@@ -9,7 +9,7 @@ import { Product, Photo } from '../model';
 })
 export class PopularItemComponent implements OnInit {
   products: Array<Product> = [];
-  photos: Array<Photo> = [];
+  posts: Array<Post> = [];
   constructor(
     private mainService: MainService
   ) { }
@@ -20,8 +20,8 @@ export class PopularItemComponent implements OnInit {
 
   getPopularPhotos() {
     this.mainService.getPopularPhotos().subscribe((res) => {
-      this.photos = res.splice(0, 6);
-      console.log(this.photos);
+      this.posts = res.splice(0, 6);
+      console.log(this.posts);
     }, error => {
       console.log(error.message);
       alert(error.message);

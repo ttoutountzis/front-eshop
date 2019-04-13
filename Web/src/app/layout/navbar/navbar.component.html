@@ -10,9 +10,14 @@
         <a class="nav-link" [routerLink]="['/home']" routerLinkActive="text-warning" >Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link"  [routerLink]="['/product-list']" routerLinkActive="text-warning">Products</a>
+        <a class="nav-link"  [routerLink]="['/posts']" routerLinkActive="text-warning">Posts</a>
       </li>  
-     
+      <li class="nav-item">
+          <a class="nav-link"  [routerLink]="['/post', 'new']" routerLinkActive="text-warning">New Post</a>
+        </li> 
+        <li class="nav-item">
+            <a class="nav-link"  [routerLink]="['/user', 'new']" routerLinkActive="text-warning">New User</a>
+          </li> 
     </ul>
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">

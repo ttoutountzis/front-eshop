@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row my-5" *ngIf="user">
+    <div class="col-md-6 ">
+      <h3>This is new user</h3>
+      <div class="form-group mb-3">
+        <label>name</label>
+        <input type="text" class="form-control" [(ngModel)]="user.name">
+      </div>
+      <div class="form-group mb-3">
+        <label>lastname</label>
+        <input type="text" class="form-control" [(ngModel)]="user.lastname">
+      </div>
+      <div class="form-group mb-3">
+        <label>User email</label>
+        <input type="number" class="form-control" [(ngModel)]="user.email">
+      </div>
+    </div>
+    <div class="col-md-6 ">
+      <app-details-contact #mychild [contactInfo]="user.contactInfo" (emitaction)="validateSomething()"></app-details-contact>
+      <button class=" btn btn-primary" (click)="mychild.validateInChild()">Save</button>
+      <button class=" btn btn-danger" (click)="null">Delete</button>
+    </div>
+  </div>
+</div>
