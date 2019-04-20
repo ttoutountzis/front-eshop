@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MainService } from '../main.service';
 import { Product, Photo, Post } from '../model';
+import { ProductService } from 'src/app/product/product.service';
 
 @Component({
   selector: 'app-popular-item',
@@ -11,7 +12,7 @@ export class PopularItemComponent implements OnInit {
   products: Array<Product> = [];
   posts: Array<Post> = [];
   constructor(
-    private mainService: MainService
+    private mainService: ProductService
   ) { }
 
   ngOnInit() {
@@ -19,9 +20,9 @@ export class PopularItemComponent implements OnInit {
   }
 
   getPopularPhotos() {
-    this.mainService.getPopularPhotos().subscribe((res) => {
+    this.mainService.getPosts().subscribe((res) => {
       this.posts = res.splice(0, 6);
-      console.log(this.posts);
+      this.mainService.postsCount = this.posts.length;
     }, error => {
       console.log(error.message);
       alert(error.message);

@@ -1,0 +1,12 @@
+<form class="example-form">
+  <input type="text" id="searchBox" name="searchBox" placeholder="Search" [(ngModel)]="searchBoxValue"
+    class="form-control " (keyup.enter)="onKey()">
+</form>
+<div class="col-sm-1 pr-1">
+  <i (click)="searchWord()" class="fa fa-search float-right"></i>
+</div>
+
+<button (click)="ordyBy(orderbyValue === 0 ? 1 : 0)">Dirty SortExample</button>
+
+<button (click)="loadMore()">Load More</button>
+

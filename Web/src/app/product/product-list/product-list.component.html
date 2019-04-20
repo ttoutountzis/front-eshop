@@ -1,3 +1,11 @@
-<p>
-  product-list works!
-</p>
+<div class="row">
+  <div class="col-4 col-sm-4" *ngFor="let post of posts">
+    <div class="card  mx-auto mb-4" style="width: 18rem; ">
+      <!-- <img [src]="photo.thumbnailUrl" class="card-img-top" alt="..."> -->
+      <div class="card-body">
+        <h5 class="card-title">{{post.title}}</h5>
+        <p class="card-text">{{post.body}}</p>       
+      </div>
+    </div>
+  </div>
+</div>
